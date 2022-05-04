@@ -12,6 +12,14 @@ $(document).keypress(function () {
   }
 });
 
+$(document).click(function () {
+  if (!gameStart) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    gameStart = true;
+  }
+});
+
 $(".btn").click(e => {
   const userChosenColor = e.target.id;
   userClickedPattern.push(userChosenColor)
